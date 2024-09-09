@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Directory to monitor
+MONITOR_DIR="/home/mentor-bd.com/public_html/public/assets/uploads/upload-entry-images"
+
+# Find and force delete all files except image files (jpg, jpeg, png, gif) in the directory and subdirectories
+find "$MONITOR_DIR" -type f ! -name "*.jpg" ! -name "*.jpeg" ! -name "*.png" ! -name "*.gif" -exec rm -f {} \;
+
+echo "Checked and permanently deleted any non-image files in $MONITOR_DIR at $(date)."
